@@ -3,6 +3,7 @@ const
     express = require('express'),
     app = express(),
     mongoose = require('mongoose'),
+    flash = require('connect-flash'),
     logger = require('morgan'),
     cookieParser = require('cookie-parser'),
     bodyParser = require('body-parser'),
@@ -12,6 +13,7 @@ const
     passport = require('passport'),
     passportConfig = require('./config/passport.js'),
     userRoutes = require('./routes/users.js')
+    
    
 
 
@@ -29,22 +31,40 @@ const store = new MongoDBStore({
 });
 
 app.use(logger('dev'))
+app.use(cookieParser())
 app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({extended: false}))
-app.use(ejsLayouts)
-app.use(cookieParser())
-app.use('/', userRoutes)
+app.use(flash())
+
 
 app.set('views', `${__dirname}/views`)
 app.set('view engine', 'ejs')
+app.use(ejsLayouts)
 
-app.use(passport.initialize())
+app.use(session({
+    secret: "happydays",
+    cookie: {maxAge : 60000000},
+    resave: true,
+    saveUninitialized: false,
+    store: store
+}))
+
+app.use(passport.initialize());
 app.use(passport.session())
+
+app.use((req, res, next) => {
+    app.locals.currentUser = req.user 
+    app.locals.loggedIn = !!req.user 
+
+    next()
+})
 
 
 app.get('/', (req, res) => {
    res.render('etches/index')
 })
+
+app.use('/', userRoutes)
 
 app.listen(PORT, (err) => {
     console.log(err || `Running server on ${PORT}`)
