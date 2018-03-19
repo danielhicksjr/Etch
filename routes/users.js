@@ -5,13 +5,13 @@ const
 
     userRouter.route('/login')
         .get((req, res) => {
-            res.render('login')
+            res.render('users/login')
         })
         .post(/* create session using Passport */)
  
     userRouter.route('/signup')
         .get((req, res ) => {
-                res.render('signup')
+                res.render('users/signup')
         })
         .post(/*create acct using Passport */ )
 
