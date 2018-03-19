@@ -13,12 +13,12 @@ module.exports = {
     },
 
     new: (req, res) => {
-        res.render('etches/new')
+        res.render('etches/new', {user: req.user})
     },
 
     create: (req, res) => {
         const newEtch = new Etch(req.body)
-        newEtch.user = req.params.userId
+        newEtch.user = req.user._id
         newEtch.save((err, brandNewEtch) => {
             res.json({success: true, message: "New etch created", etch: brandNewEtch})
         })
