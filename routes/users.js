@@ -1,7 +1,7 @@
 const 
     express = require('express'),
     passport = require('passport'),
-    userRouter = express.Router()
+    userRouter = new express.Router()
 
     userRouter.route('/login')
         .get((req, res) => {

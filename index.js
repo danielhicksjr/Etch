@@ -12,8 +12,8 @@ const
     MongoDBStore = require('connect-mongodb-session')(session),
     passport = require('passport'),
     passportConfig = require('./config/passport.js'),
-    userRoutes = require('./routes/users.js')
-    
+    userRoutes = require('./routes/users.js'),
+    etchRoutes = require('./routes/etches.js')
    
 
 
@@ -35,7 +35,6 @@ app.use(cookieParser())
 app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({extended: false}))
 app.use(flash())
-
 
 app.set('views', `${__dirname}/views`)
 app.set('view engine', 'ejs')
@@ -65,6 +64,7 @@ app.get('/', (req, res) => {
 })
 
 app.use('/', userRoutes)
+app.use(':userId/etches', etchRoutes)
 
 app.listen(PORT, (err) => {
     console.log(err || `Running server on ${PORT}`)
