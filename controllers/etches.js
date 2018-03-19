@@ -17,9 +17,10 @@ module.exports = {
     },
 
     create: (req, res) => {
-        Etch.create(req.body, (err, brandNewEtch) => {
-            if (err) return console.log(err)
-            res.redirect('etches/show')
+        const newEtch = new Etch(req.body)
+        newEtch.user = req.params.userId
+        newEtch.save((err, brandNewEtch) => {
+            res.json({success: true, message: "New etch created", etch: brandNewEtch})
         })
     },
 
