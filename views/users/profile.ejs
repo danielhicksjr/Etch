@@ -11,7 +11,11 @@
     <h3><a href="/etches/new">New Etch</a></h3>
 </div>
 <div id="etchList">
-    <% %>
+    <ul>
+        <% etches.forEach(function(e) { %>
+            <li><%= e.title %></li>
+        <% }) %>
+    </ul>
 </div
 <div class="row">
     <div class="col-sm-6 col-sm-offset-3">
