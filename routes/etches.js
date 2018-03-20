@@ -4,9 +4,9 @@ const
     etchCntrl = require ('../controllers/etches.js')
 
 etchRoutes.get('/', etchCntrl.index)
-etchRoutes.post('/profile/etches', etchCntrl.create)
+etchRoutes.post('/', etchCntrl.create)
 
-etchRoutes.get('/profile/etches/new', etchCntrl.new)
+etchRoutes.get('/new', etchCntrl.new)
 etchRoutes.get('/:etchId/edit', etchCntrl.edit)
 
 etchRoutes.get('/:etchId', etchCntrl.show)

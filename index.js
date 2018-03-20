@@ -64,7 +64,7 @@ app.get('/', (req, res) => {
 })
 
 app.use('/', userRoutes)
-app.use('/', etchRoutes)
+app.use('/etches', etchRoutes)
 
 
 app.listen(PORT, (err) => {
