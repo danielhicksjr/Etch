@@ -12,7 +12,7 @@ const
     MongoDBStore = require('connect-mongodb-session')(session),
     passport = require('passport'),
     passportConfig = require('./config/passport.js'),
-    userRouter = require('./routes/users.js'),
+    userRoutes = require('./routes/users.js'),
     etchRoutes = require('./routes/etches.js')
    
 
