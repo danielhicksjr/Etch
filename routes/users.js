@@ -1,9 +1,9 @@
 const 
     express = require('express'),
     passport = require('passport'),
-    userRouter = new express.Router()
+    userRoutes = new express.Router()
 
-    userRouter.route('/login')
+    userRoutes.route('/login')
         .get((req, res) => {
             res.render('users/login')//flash message 
         })
@@ -12,7 +12,7 @@ const
             failureRediredt: '/login'
         }))
  
-    userRouter.route('/signup')
+    userRoutes.route('/signup')
         .get((req, res) => {
                 res.render('users/signup') // flash messages 
         })
@@ -21,12 +21,12 @@ const
             failureRediredt: '/signup'
         }))
 
-    userRouter.get('/profile', isLoggedIn, (req, res) => {
+    userRoutes.get('/profile', isLoggedIn, (req, res) => {
         res.render('users/profile', {user: req.user})
         })
 
 
-    userRouter.get('/logout', (req, res) => {
+    userRoutes.get('/logout', (req, res) => {
         req.logout()
         res.redirect('/')
     })
@@ -36,4 +36,4 @@ const
         res.redirect('/')
     }
 
-    module.exports = userRouter 
+    module.exports = userRoutes
