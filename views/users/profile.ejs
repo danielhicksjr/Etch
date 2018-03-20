@@ -13,7 +13,7 @@
 <div id="etchList">
     <ul>
         <% etches.forEach(function(e) { %>
-            <li><%= e.title %></li>
+            <li><a href="/etches/<%= e._id %>"><%= e.title %></a></li>
         <% }) %>
     </ul>
 </div
