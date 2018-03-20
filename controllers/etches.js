@@ -47,13 +47,16 @@ module.exports = {
             if (err)
               console.log('error:', err);
             else
-              console.log(JSON.stringify(response, null, 2));
+              console.log(response)
+              const newEtch = new Etch(req.body)
+              newEtch.user = req.user._id
+              newEtch.result = response
+              newEtch.save((err, brandNewEtch) => {
+      
+                  res.redirect('/profile')
+              })
           })
-        const newEtch = new Etch(req.body)
-        newEtch.user = req.user._id
-        newEtch.save((err, brandNewEtch) => {
-            res.redirect('/profile')
-        })
+        
     },    
 
     edit: (req, res) => {
