@@ -52,7 +52,7 @@ module.exports = {
         const newEtch = new Etch(req.body)
         newEtch.user = req.user._id
         newEtch.save((err, brandNewEtch) => {
-            res.redirect('/profile')
+            res.redirect(`/etches/${newEtch._id}`)
         })
     },    
 
