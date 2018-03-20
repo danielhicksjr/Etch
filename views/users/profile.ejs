@@ -1,31 +1,25 @@
 <div class="page-header">
-    <h1><%= user.name %></h1>
-    
-    <% if (message.length > 0) { %>
-        <div class="alert alert-danger"><%= message %></div>
-    <% } %>
-
-    <a href="/logout" class="btn btn-default btn-sm">Logout</a>
+    <h1><%= user.name %></h1>    
 </div>
+<hr>
 <div id="newEtchBtn">
     <h3><a href="/etches/new">New Etch</a></h3>
 </div>
 <div id="etchList">
+    <h4>Previous etches</h4>
     <ul>
         <% etches.forEach(function(e) { %>
-            <li><a href="/etches/<%= e._id %>"><%= e.title %></a></li>
+            <div class="profile-box"><li><a href="/etches/<%= e._id %>"><%= e.title %></a></li></div>
         <% }) %>
     </ul>
 </div
 <div class="row">
     <div class="col-sm-6 col-sm-offset-3">
         <div class="well">
-            <h3>User</h3>
+            <h3>Account info</h3>
                 <p>
                     <strong>Name</strong>: <%= user.name %><br>
-                    <strong>id</strong>: <%= user._id %><br>
                     <strong>email</strong>: <%= user.email %><br>
-                    <strong>password</strong>: <%= user.password %>
                 </p>
         </div>
     </div>
