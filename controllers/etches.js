@@ -53,7 +53,7 @@ module.exports = {
               newEtch.result = response
               newEtch.save((err, brandNewEtch) => {
       
-                  res.redirect('/profile')
+                  res.redirect(`/etches/${newEtch._id}`)
               })
           })
     },    
