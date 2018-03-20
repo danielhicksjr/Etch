@@ -10,12 +10,24 @@ const
     bodyParser = require('body-parser'),
     session = require('express-session'),
     MongoDBStore = require('connect-mongodb-session')(session),
+    axios = require('axios'),
+    httpClient = axios.create(),
     passport = require('passport'),
     passportConfig = require('./config/passport.js'),
     userRoutes = require('./routes/users.js'),
-    etchRoutes = require('./routes/etches.js')
-   
+    etchRoutes = require('./routes/etches.js'),
+    NaturalLanguageUnderstandingV1 = require('watson-developer-cloud/natural-language-understanding/v1.js')
+    
 
+const apiUsername = process.env.API_USERNAME
+const apiPassword = process.env.API_PASSWORD
+  
+const natural_language_understanding = new NaturalLanguageUnderstandingV1({
+    "url": "https://gateway.watsonplatform.net/natural-language-understanding/api",
+    "username": `${apiUsername}`,
+    "password": `${apiPassword}`,
+    "version_date": "2017-02-27"
+});
 
 const 
     PORT = process.env.PORT || 3000, 
@@ -65,6 +77,31 @@ app.get('/', (req, res) => {
 
 app.use('/', userRoutes)
 app.use('/', etchRoutes)
+
+
+app.post('/etches/apiResponse', (req, res) => {
+    const parameters = {
+        'text': 'IBM is an American multinational technology company headquartered in Armonk, New York, United States, with operations in over 170 countries.',
+        'features': {
+          'entities': {
+            'emotion': true,
+            'sentiment': true,
+            'limit': 2
+          },
+          'keywords': {
+            'emotion': true,
+            'sentiment': true,
+            'limit': 2
+          }
+        }
+      }
+      natural_language_understanding.analyze(parameters, function(err, response) {
+        if (err)
+          console.log('error:', err);
+        else
+          console.log(JSON.stringify(response, null, 2));
+      });
+})
 
 
 app.listen(PORT, (err) => {
