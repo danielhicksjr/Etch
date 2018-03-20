@@ -2,17 +2,17 @@ const
     dotenv = require('dotenv').config(),
     express = require('express'),
     app = express(),
+    ejsLayouts = require('express-ejs-layouts'),
     mongoose = require('mongoose'),
     flash = require('connect-flash'),
     logger = require('morgan'),
     cookieParser = require('cookie-parser'),
     bodyParser = require('body-parser'),
-    ejsLayouts = require('express-ejs-layouts'),
     session = require('express-session'),
     MongoDBStore = require('connect-mongodb-session')(session),
     passport = require('passport'),
     passportConfig = require('./config/passport.js'),
-    userRoutes = require('./routes/users.js'),
+    userRouter = require('./routes/users.js'),
     etchRoutes = require('./routes/etches.js')
    
 
@@ -32,8 +32,8 @@ const store = new MongoDBStore({
 
 app.use(logger('dev'))
 app.use(cookieParser())
+app.use(bodyParser.urlencoded({extended: true}))
 app.use(bodyParser.json())
-app.use(bodyParser.urlencoded({extended: false}))
 app.use(flash())
 
 app.set('views', `${__dirname}/views`)
@@ -65,6 +65,7 @@ app.get('/', (req, res) => {
 
 app.use('/', userRoutes)
 app.use('/', etchRoutes)
+
 
 app.listen(PORT, (err) => {
     console.log(err || `Running server on ${PORT}`)

@@ -4,12 +4,12 @@ const
     User = require('../models/User.js')
 
     passport.serializeUser((user, done) => {
-        done(null, user.id)
+        done(null, user._id)
     })
 
     passport.deserializeUser((id, done) => {
-        User.findById(id, (err, user) => {
-            done(err, user)
+        User.findById(id, (err, thatUser) => {
+            done(err, thatUser)
         })
     })
 
@@ -21,14 +21,15 @@ const
     }, (req, email, password, done) => {
         User.findOne({email: email}, (err, user) => {
             if(err) return done(err)
-            if(user) return done(null, false, req.flash('signupMessage', 'That email is taken.'))
+            if(user) return done(null, false, req.flash('signupMessage', "That email is taken."))
+            if(!req.body.name || !req.body.password) return done(null, false, req.flash('signupMessage', "All fields are required..."))
             var newUser = new User()
-             newUser.name = req.body.name
-            newUser.email = email
-            newUser.password = newUser.generateHash(password)
-            newUser.save((err) => {
+            newUser.name = req.body.name
+            newUser.email = req.body.email
+            newUser.password = newUser.generateHash(req.body.password)
+            newUser.save((err, savedUser) => {
                 if(err) throw err
-                return done(null, newUser, null)
+                return done(null, savedUser)
             })
         })
     }))
@@ -42,9 +43,9 @@ passport.use('local-login', new LocalStrategy({
 }, (req, email, password, done) => {
 	User.findOne({email: email}, (err, user) => {
 		if(err) return done(err)
-		if(!user) return done(null, false, req.flash('loginMessage', 'No user found...'))
-		if(!user.validPassword(password)) return done(null, false, req.flash('loginMessage', 'Wrong Password.'))
-		return done(null, user)
+		if(!user) return done(null, false, req.flash('loginMessage', "No user found..."))
+		if(!user.validPassword(req.body.password)) return done(null, false, req.flash('loginMessage', "Wrong Password."))
+		return done(null, user, req.flash('welcomeMessage', `Welcome back, ${user.name}!`))
 	})
 }))
 
