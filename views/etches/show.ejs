@@ -1,3 +1,12 @@
 <h1><%= etch.title %></h1>
 <p><%= etch.body %></p>
-<p><%= etch.result %></p>
+<h2>Emotions:</h2>
+<p>Sadness: <%= etch.result.emotion.document.emotion.sadness  %></p>
+<p>Joy: <%= etch.result.emotion.document.emotion.joy  %></p> 
+<p>Fear: <%= etch.result.emotion.document.emotion.fear  %></p> 
+<p>Disgust: <%= etch.result.emotion.document.emotion.disgust  %></p> 
+<p>Anger: <%= etch.result.emotion.document.emotion.anger  %></p> 
+<h2>Sentiment:</h2>
+<p>Score: <%= etch.result.sentiment.document.score %> </p>
+<p>Label: <%=etch.result.sentiment.document.label %> </p>
+
