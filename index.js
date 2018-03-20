@@ -63,8 +63,9 @@ app.get('/', (req, res) => {
    res.render('etches/index')
 })
 
-app.use('/', userRouter)
-app.use(':userId/etches', etchRoutes)
+app.use('/', userRoutes)
+app.use('/', etchRoutes)
+
 
 app.listen(PORT, (err) => {
     console.log(err || `Running server on ${PORT}`)
