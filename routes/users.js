@@ -1,7 +1,8 @@
 const 
     express = require('express'),
     userRoutes = new express.Router(),
-    passport = require('passport')
+    passport = require('passport'),
+    Etch = require('../models/Etch.js')
  
 
     userRoutes.route('/login')
@@ -23,7 +24,10 @@ const
         }))
 
     userRoutes.get('/profile', isLoggedIn, (req, res) => {
-        res.render('users/profile', {user: req.user, message: req.flash('welcomeMessage')})
+        Etch.find({user: req.user}, (err, allEtches) => {
+            res.render('users/profile', {user: req.user, message: req.flash('welcomeMessage'), etches: allEtches})
+        })
+        
     })
 
 
