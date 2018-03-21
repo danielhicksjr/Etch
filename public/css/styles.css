@@ -35,12 +35,15 @@
 
 .chart .percent {
     font-size: 14px;
-    color: white;
+    color: black;
     width: 100%;
     opacity: .9;
     overflow: hidden;
     text-transform: uppercase;
     bottom: 20px;
+    margin: 60px 0 65px 0;
+    font-weight: 800;
+    opacity: .6;
 }
 
 .chart .percent span{
@@ -51,22 +54,23 @@
     display: flex;
     flex-direction: row;
     flex-wrap: nowrap;
-    justify-content: space-around;
+    justify-content: space-between;
     align-items: center;
     width: 100%;
-    margin-top: 5px;
+    margin-top: 10px;
     padding-right: 12%;
+    height: 10px;
 
  }
 
 .chart .label { 
-    margin: -.6em 0 65px 0;
+    margin: 60px 0 65px 0;
     display: inline;
     font-weight: 800;
-    opacity: .7;
+    opacity: .9;
     overflow: hidden;
     text-transform: uppercase;
-    font-size: 12px;
+    font-size: 14px;
  }
 
 .chart .blue {
