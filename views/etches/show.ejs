@@ -1,12 +1,36 @@
 <h1><%= etch.title %></h1>
 <p><%= etch.body %></p>
-<h2>Emotions:</h2>
-<p>Sadness: <%= etch.result.emotion.document.emotion.sadness  %></p>
-<p>Joy: <%= etch.result.emotion.document.emotion.joy  %></p> 
-<p>Fear: <%= etch.result.emotion.document.emotion.fear  %></p> 
-<p>Disgust: <%= etch.result.emotion.document.emotion.disgust  %></p> 
-<p>Anger: <%= etch.result.emotion.document.emotion.anger  %></p> 
 <h2>Sentiment:</h2>
-<p>Score: <%= etch.result.sentiment.document.score %> </p>
-<p>Label: <%=etch.result.sentiment.document.label %> </p>
+    <p>Your etch has a <%= (etch.result.sentiment.document.score * 100).toFixed(2)  %>% <%= (etch.result.sentiment.document.label) %> sentiment. </p>
+<h2>Emotions:</h2>
+<div class="chart-container">
+    <ul class="chart">
+    <li class="blue" style="height:<%= (etch.result.emotion.document.emotion.sadness * 100).toFixed(2)  %>%;">
+    <li class="yellow" style="height:<%= (etch.result.emotion.document.emotion.joy * 100).toFixed(2)  %>%;">
+    <li class="purple" style="height:<%= (etch.result.emotion.document.emotion.fear * 100).toFixed(2)  %>%;">
+    <li class="green" style="height:<%= (etch.result.emotion.document.emotion.disgust * 100).toFixed(2)  %>%;">
+    <li class="red" style="height:<%= (etch.result.emotion.document.emotion.anger * 100).toFixed(2)   %>%;">
+    <li class="axis">
+        <div class="label">Sadness</div>
+        <div class="label">Joy</div>
+        <div class="label">Fear</div>
+        <div class="label">Disgust</div>
+        <div class="label">Anger</div>
+    </li>
+    <li class="axis">
+    <div class="percent"> <%= (etch.result.emotion.document.emotion.sadness * 100).toFixed(2)  %><span>%</span></div>
+    <div class="percent"> <%= (etch.result.emotion.document.emotion.joy * 100).toFixed(2)  %><span>%</span></div>
+    <div class="percent"><%= (etch.result.emotion.document.emotion.fear * 100).toFixed(2)  %><span>%</span></div>
+    <div class="percent"><%= (etch.result.emotion.document.emotion.disgust * 100).toFixed(2)  %><span>%</span></div>
+    <div class="percent"><%= (etch.result.emotion.document.emotion.anger * 100).toFixed(2)   %><span>%</span></div>
+</li>
+    </ul>
+</div>
 
+
+<a class= "btn btn-primary" href="/etches/<%= etch._id %>/edit">Edit</a>
+
+
+<form method="POST" action="/etches/<%= etch._id %>?_method=DELETE">
+    <button type="submit">Delete</button>
+</form>
