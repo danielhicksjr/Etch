@@ -30,7 +30,7 @@ const
             newUser.save((err, savedUser) => {
                 if(err) throw err
                 return done(null, savedUser)
-            })
+            })  
         })
     }))
 
