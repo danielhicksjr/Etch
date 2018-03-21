@@ -50,6 +50,14 @@ userRoutes.patch('/:userId', (req, res) => {
     })
 })
 
+userRoutes.delete('/:userId', (req, res) => {
+    User.findByIdAndRemove(req.params.userId, (err, deletedUser) => {
+        Etch.remove({user: req.params.userId}, (err) => {
+            res.json({success: true, message: "User and etches deleted", user: deletedUser})
+        })
+    })
+})
+
     function isLoggedIn(req, res, next){
         if(req.isAuthenticated()) return next()
         res.redirect('/')
