@@ -44,17 +44,20 @@ module.exports = {
             'return_analyzed_text': true
           }
           natural_language_understanding.analyze(parameters, function(err, response) {
-            if (err)
-              console.log('error:', err);
-            else
-              console.log(response)
-              const newEtch = new Etch(req.body)
-              newEtch.user = req.user._id
-              newEtch.result = response
-              newEtch.save((err, brandNewEtch) => {
-      
+            if (err) {
+
+                console.log('error:', err)
+                return res.redirect('/etches/new')
+            
+            } else if(response !== null){
+                console.log(response)
+                const newEtch = new Etch(req.body)
+                newEtch.user = req.user._id
+                newEtch.result = response
+                newEtch.save((err, brandNewEtch) => {
+        
                   res.redirect(`/etches/${newEtch._id}`)
-              })
+              })}
           })
     },    
 
