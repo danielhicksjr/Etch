@@ -26,7 +26,7 @@ module.exports = {
     },
 
     new: (req, res) => {
-        res.render('etches/new', {user: req.user})
+        res.render('etches/new', {user: req.user, message: req.flash('invalid-text')})
     },
 
     create: (req, res) => {
@@ -47,6 +47,7 @@ module.exports = {
             if (err) {
 
                 console.log('error:', err)
+                req.flash('invalid-text', "Text is invalid, cannot analyze. Please try again")
                 return res.redirect('/etches/new')
             
             } else if(response !== null){
