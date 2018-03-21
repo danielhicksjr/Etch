@@ -2,7 +2,8 @@ const
     express = require('express'),
     userRoutes = new express.Router(),
     passport = require('passport'),
-    Etch = require('../models/Etch.js')
+    Etch = require('../models/Etch.js'),
+    User = require('../models/User.js')
  
 
     userRoutes.route('/login')
@@ -30,11 +31,24 @@ const
         
     })
 
-
     userRoutes.get('/logout', (req, res) => {
         req.logout()
         res.redirect('/')
     })
+
+userRoutes.get('/:userId', (req, res) => {
+    User.findById(req.params.userId, (err, thatUser) => {
+        if(err) return console.log(err)
+        res.render('users/edit')
+    })
+})
+
+userRoutes.patch('/:userId', (req, res) => {
+    User.findByIdAndUpdate(req.params.userId, req.body, {new: true}, (err, updatedUser) => {
+        if(err) return console.log(err)
+        res.redirect('/profile')
+    })
+})
 
     function isLoggedIn(req, res, next){
         if(req.isAuthenticated()) return next()
