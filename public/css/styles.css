@@ -10,3 +10,93 @@
     font-size: 20px;
     font-style: oblique;
 }
+
+/* CSS FOR BAR CHART */
+
+.chart { 
+    width: 100%; 
+    background: url("http://cl.ly/QSpc/bg-chart.png") right top repeat-x;
+    height: 425px;
+    margin: 0 auto -32px;
+}
+
+.chart li {
+    display: inline-block;
+    height: 425px;
+    margin: 0 1.8% 0 0;
+    width: 14%;
+    border-radius: 4px 4px 0 0; 
+    box-shadow: 0 1px 0 0 rgba(255,255,255,.6) inset; 
+    padding: 25px 0;
+    position: relative;
+    text-align: center;
+    vertical-align: bottom;
+}
+
+.chart .axis { 
+    display: inline-block;
+    top: -25px;
+    width: 11%;
+ }
+
+.chart .label {
+    background: #eaeaea;
+    margin: -.6em 0 65px 0;
+}
+
+.chart .percent {
+    font-size: 16px;
+    position: absolute;
+    letter-spacing: -3px;
+    opacity: .4;
+    width: 100%;
+}
+
+.chart .percent span{
+    font-size: 12px;
+}
+.chart .blue {
+    background: #3399ff;
+    background-image: linear-gradient(#3399ff 70%);
+    border: 1px solid #3399ff;
+}
+
+.chart .yellow {
+    background: #ffff4d;
+    background-image: linear-gradient(#ffff4d 70%);
+    border: 1px solid #ffff4d;
+}
+
+.chart .purple {
+    background: #9966ff;
+    background-image: linear-gradient(#9966ff 70%);
+    border: 1px solid #9966ff;
+}
+
+.chart .green {
+    background: #66ff66;
+    background-image: linear-gradient(#66ff66 70%);
+    border: 1px solid #66ff66;
+}
+
+.chart .red {
+    background: #ff0000;
+    background-image: linear-gradient(#ff0000 70%);
+    border: 1px solid #ff0000;
+}
+
+.chart .emotion {
+    font-weight: 800;
+    opacity: .5;
+    overflow: hidden;
+    text-transform: uppercase;
+    width: 100%;
+    position: absolute;
+    bottom: 20px;
+    font-size: 12px;
+}
+
+.chart span { font-size: 30px;  }
+
+
+
