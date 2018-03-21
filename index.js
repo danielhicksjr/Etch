@@ -17,7 +17,7 @@ const
     userRoutes = require('./routes/users.js'),
     etchRoutes = require('./routes/etches.js'),
     NaturalLanguageUnderstandingV1 = require('watson-developer-cloud/natural-language-understanding/v1.js')
-    
+    methodOverride = require('method-override')
 
 const apiUsername = process.env.API_USERNAME
 const apiPassword = process.env.API_PASSWORD
@@ -31,7 +31,7 @@ const natural_language_understanding = new NaturalLanguageUnderstandingV1({
 
 const 
     PORT = process.env.PORT || 3000, 
-    mongoConnectionString = process.env.MONGODB_URL || 'mongodb://localhost/etch'
+    mongoConnectionString = process.env.MONGODB_URI || 'mongodb://localhost/etch'
 
 mongoose.connect(mongoConnectionString, (err) => {
     console.log(err || 'Connected to MongoDB')
@@ -47,6 +47,7 @@ app.use(cookieParser())
 app.use(bodyParser.urlencoded({extended: true}))
 app.use(bodyParser.json())
 app.use(flash())
+app.use(methodOverride('_method'))
 
 app.use(express.static(`${__dirname}/public`))
 app.set('views', `${__dirname}/views`)

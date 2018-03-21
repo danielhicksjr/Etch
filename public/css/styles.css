@@ -4,12 +4,39 @@
     padding: 10px; 
     margin-bottom: 5px;
     list-style-type: none;
+    opacity: .7;
 }
 
 .profile-box:hover {
     font-size: 20px;
     font-style: oblique;
 }
+
+.anger {
+    background: linear-gradient(to right, white , #BF3330)
+    }
+
+div .anger:hover {
+    background: linear-gradient(to right, white , #BF3330)  
+}
+
+.joy {
+    background: linear-gradient(to right, white , #E5B724)
+}
+
+.fear {
+    background: linear-gradient(to right, white , #40103E)
+}
+
+.disgust {
+    background: linear-gradient(to right, white , #14A76C)
+}
+
+.sadness {
+    background: linear-gradient(to right, white , #373F7F)
+}
+
+
 
 /* CSS FOR BAR CHART */
 
@@ -105,4 +132,4 @@
 
 
 
-
+   

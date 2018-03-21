@@ -26,7 +26,7 @@ module.exports = {
     },
 
     new: (req, res) => {
-        res.render('etches/new', {user: req.user})
+        res.render('etches/new', {user: req.user, message: req.flash('invalid-text')})
     },
 
     create: (req, res) => {
@@ -44,18 +44,22 @@ module.exports = {
             'return_analyzed_text': true
           }
           natural_language_understanding.analyze(parameters, function(err, response) {
-            if (err)
-              console.log('error:', err);
-            else
-            console.log(response)
-            const newEtch = new Etch(req.body)
-            newEtch.user = req.user._id
-            newEtch.result = response
-            newEtch.save((err, brandNewEtch) => {
-    
-                res.redirect(`/etches/${newEtch._id}`)
-            })        
-        })
+            if (err) {
+
+                console.log('error:', err)
+                req.flash('invalid-text', "Text is invalid, cannot analyze. Please try again")
+                return res.redirect('/etches/new')
+            
+            } else if(response !== null){
+                console.log(response)
+                const newEtch = new Etch(req.body)
+                newEtch.user = req.user._id
+                newEtch.result = response
+                newEtch.save((err, brandNewEtch) => {
+        
+                  res.redirect(`/etches/${newEtch._id}`)
+              })}
+          })
     },    
 
     edit: (req, res) => {

@@ -27,3 +27,10 @@
     </ul>
 </div>
 
+
+<a class= "btn btn-primary" href="/etches/<%= etch._id %>/edit">Edit</a>
+
+
+<form method="POST" action="/etches/<%= etch._id %>?_method=DELETE">
+    <button type="submit">Delete</button>
+</form>
