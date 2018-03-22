@@ -2,7 +2,9 @@
 
 
     <h1>Update Profile</h1>
-        
+        <% if (message.length > 0) { %>
+            <div class="alert alert-danger"><%= message %></div>
+        <% } %>
 
     <form action="/<%=user._id%>?_method=PATCH" method="post">
         <div class="form-group">
@@ -16,6 +18,10 @@
         <div class="form-group">
             <label>Password</label>
             <input type="password" class="form-control" name="password">
+        </div>
+        <div class="form-group">
+            <label>Confirm Password</label>
+            <input type="password" class="form-control" name="confirmPassword">
         </div>
         <button type="submit" class="btn btn-warning btn-lg">Submit Changes</button>
     </form>
