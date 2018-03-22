@@ -1,27 +1,25 @@
 <div class="row page-header align-items-center high-margin">
     <div class="col-6">
-        <h1><%= user.name %></h1>   
+            <div>
+                <h1><%= user.name %></h1>   
+            </div>
         <div class="btn-group btn-group-justified">
-        <h4><a href="/etches/new">Create Etch</a></h4>
-            
-        </div> 
-        
+            <div>
+                <a class= "btn profile-btn btn-success" href="/etches/new">New Etch</a>
+            </div>
+        </div>    
     </div>
-    <div class="col-6 text-right"> 
+    <div class="col-6 text-right larger-margin"> 
         <div id="newEtchBtn">
-        <a class= "btn profile-btn btn-dark" href="<%=user._id  %>/edit">Edit Profile</a>
-       
+            <a class= "btn profile-btn btn-dark" href="<%=user._id  %>/edit">Edit Profile</a>
         </div>
-    </div>
-    
+    </div>   
 </div>
-
 
 <hr id="space-below">
 <div id="etchList">
     <h4>My Etches</h4>
     <ul>
-
         <% etches.forEach(function(e) { %>
             <% var path = e.result.emotion.document.emotion %>
             <% var t = Object.keys(path).reduce((a, b) => path[a] > path[b] ? a : b)%>  
@@ -31,14 +29,12 @@
                 </div>
             </div>     
         <% }) %>
-
     </ul>
 </div
 <div class="row">
     <div class="col-sm-6 col-sm-offset-3 deep-margin">
         <div class="well">
-                
-                
+                 
         </div>
     </div>
 </div>

@@ -1,36 +1,35 @@
-<div class="col-sm-6 col-sm-offset-3 high-margin">
-
-
-    <h1>Update Profile</h1>
-        <% if (message.length > 0) { %>
-            <div class="alert alert-danger"><%= message %></div>
-        <% } %>
-
-    <form action="/<%=user._id%>?_method=PATCH" method="post">
-        <div class="form-group">
-            <label>Name</label>
-            <input type="text" class="form-control" name="name" value="<%= user.name %>">
+<div class="edit-profile-form high-margin">   
+    <div class="row">
+        <div class="col-md-6 offset-md-3 edit-profile-background">
+            <h1>Update Profile</h1>
+                 <% if (message.length > 0) { %>
+                    <div class="alert alert-danger"><%= message %></div>
+                 <% } %>
+            <form action="/<%=user._id%>?_method=PATCH" method="post">
+                <div class="form-group">
+                    <label>Name</label>
+                    <input type="text" class="form-control" name="name" value="<%= user.name %>">
+                </div>
+                <div class="form-group">
+                    <label>Email</label>
+                    <input type="text" class="form-control" name="email" value="<%= user.email %>">
+                </div>
+                <div class="form-group">
+                    <label>Password</label>
+                    <input type="password" class="form-control" name="password">
+                </div>
+                 <div class="form-group">
+                    <label>Confirm Password</label>
+                    <input type="password" class="form-control" name="confirmPassword">
+                </div>
+                <button type="submit" class="btn btn-warning btn-lg">Submit Changes</button>
+            </form>
+            <hr>
+            <div class="btn-group btn-group-justified">
+                <form method="POST" action="/<%=user._id %>?_method=DELETE">
+                    <button onclick="return confirm('Are you sure you want to delete your account?')" class= "btn profile-btn btn-danger" type="submit">Delete Profile</button>
+                </form>
+            </div>
         </div>
-        <div class="form-group">
-            <label>Email</label>
-            <input type="text" class="form-control" name="email" value="<%= user.email %>">
-        </div>
-        <div class="form-group">
-            <label>Password</label>
-            <input type="password" class="form-control" name="password">
-        </div>
-        <div class="form-group">
-            <label>Confirm Password</label>
-            <input type="password" class="form-control" name="confirmPassword">
-        </div>
-        <button type="submit" class="btn btn-warning btn-lg">Submit Changes</button>
-    </form>
-
-    <hr>
-    <div class="btn-group btn-group-justified">
-    <form method="POST" action="/<%=user._id %>?_method=DELETE">
-        <button onclick="return confirm('Are you sure?')" class= "btn profile-btn btn-secondary" type="submit">Delete Profile</button>
-    </form>
-   </div>
-
+    </div>
 </div>
