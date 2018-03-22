@@ -1,6 +1,6 @@
 
 
-<h1><%= etch.title %></h1>
+<h1 class="high-margin"><%= etch.title %></h1>
 <p><%= etch.body %></p>
 <h2>Sentiment:</h2>
     <p>Your etch has a <%= Math.abs((etch.result.sentiment.document.score * 100).toFixed(2))  %>% <%= (etch.result.sentiment.document.label) %> sentiment. </p>
