@@ -46,6 +46,13 @@ div .anger:hover {
     background: linear-gradient(to right, white , #373F7F)
 }
 
+.etch-btn {
+    margin: 5px;
+}
+
+.profile-btn {
+    margin: 5px;
+}
 
 /* Splash Page */
 .post-container {

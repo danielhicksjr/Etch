@@ -29,12 +29,12 @@
                     <strong>Name</strong>: <%= user.name %><br>
                     <strong>email</strong>: <%= user.email %><br>
                 </p>
-                <a class= "btn btn-primary" href="<%=user._id  %>/edit">Edit</a>
-
-
-                <form method="POST" action="/<%=user._id %>?_method=DELETE">
-                    <button type="submit">Delete</button>
-                </form>
+                <div class="btn-group btn-group-justified">
+                    <a class= "btn profile-btn btn-dark" href="<%=user._id  %>/edit">Edit</a>
+                    <form method="POST" action="/<%=user._id %>?_method=DELETE">
+                        <button class= "btn profile-btn btn-secondary" type="submit">Delete</button>
+                    </form>
+                </div>
         </div>
     </div>
 </div>
