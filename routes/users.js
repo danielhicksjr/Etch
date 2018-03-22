@@ -35,10 +35,10 @@ userRoutes.get('/logout', (req, res) => {
     res.redirect('/')
 })
 
-userRoutes.get('/:userId', (req, res) => {
+userRoutes.get('/:userId/edit', (req, res) => {
     User.findById(req.params.userId, (err, thatUser) => {
         if(err) return console.log(err)
-        res.render('users/edit')
+        res.render('users/edit', {user: thatUser})
     })
 })
 
@@ -52,7 +52,7 @@ userRoutes.patch('/:userId', (req, res) => {
 userRoutes.delete('/:userId', (req, res) => {
     User.findByIdAndRemove(req.params.userId, (err, deletedUser) => {
         Etch.remove({user: req.params.userId}, (err) => {
-            res.json({success: true, message: "User and etches deleted", user: deletedUser})
+            res.redirect('/')
         })
     })
 })
