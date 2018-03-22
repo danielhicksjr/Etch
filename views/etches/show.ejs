@@ -38,7 +38,7 @@
 
 <a class= "btn etch-btn btn-dark" href="/etches/<%= etch._id %>/edit">Edit Etch</a>
 <form method="POST" action="/etches/<%= etch._id %>?_method=DELETE">
-    <button class= "btn etch-btn btn-secondary" type="submit">Delete Etch</button>
+    <button onclick="return confirm('Are you sure you want to delete this etch?')" class= "btn etch-btn btn-secondary" type="submit">Delete Etch</button>
 </form>
 </div>
 
