@@ -46,6 +46,13 @@ div .anger:hover {
     background: linear-gradient(to right, white , #373F7F)
 }
 
+.etch-btn {
+    margin: 5px;
+}
+
+.profile-btn {
+    margin: 5px;
+}
 
 /* Splash Page */
 .post-container {
@@ -137,93 +144,57 @@ h3.post-title-right {
 
 /* CSS FOR BAR CHART */
 
-.chart { 
-    width: 100%; 
-    background: url("http://cl.ly/QSpc/bg-chart.png") right top repeat-x;
-    height: 425px;
-    margin: 0 auto;
+.graph-container {
+    height: 450px;
+    min-width: 380px;
+    max-width: 650px;
 }
 
-.chart li {
-    display: inline-block;
-    margin: 0 2% 0 0;
-    width: 16%;
+.bar {
+    margin: 0 3% 0 0;
     border-radius: 4px 4px 0 0; 
     box-shadow: 0 1px 0 0 rgba(255,255,255,.6) inset; 
-    padding: 5px 0;
-    position: relative;
-    text-align: center;
+    padding:  0;
     vertical-align: bottom;
 }
 
-
-.chart .percent {
-    font-size: 14px;
-    color: black;
-    width: 100%;
-    opacity: .9;
-    overflow: hidden;
-    text-transform: uppercase;
-    bottom: 20px;
-    margin: 60px 0 65px 0;
-    font-weight: 800;
-    opacity: .6;
+.label {
+    text-align: center; 
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
 }
 
-.chart .percent span{
-    font-size: 12px;
+.percentage {
+    font-weight: 400;
 }
 
-.chart .axis { 
-    display: flex;
-    flex-direction: row;
-    flex-wrap: nowrap;
-    justify-content: space-between;
-    align-items: center;
-    width: 100%;
-    margin-top: 10px;
-    padding-right: 12%;
-    height: 10px;
-
- }
-
-.chart .label { 
-    margin: 60px 0 65px 0;
-    display: inline;
-    font-weight: 800;
-    opacity: .9;
-    overflow: hidden;
-    text-transform: uppercase;
-    font-size: 14px;
- }
-
-.chart .blue {
+.blue {
     background: #5762b7;
     background-image: linear-gradient( #5762b7, #373F7F 70%);
     border: 1px solid #373F7F;
 }
 
-.chart .yellow {
-    background: #ebc752;
-    background-image: linear-gradient( #ebc752 #E5B724 70%);
+.yellow {
+    background: #fde79b;
+    background-image: linear-gradient( #fde79b, #E5B724 70%);
     border: 1px solid #E5B724;
 }
 
-.chart .purple {
+.purple {
     background: #761e72;
-    background-image: linear-gradient( #761e72, #40103E, 70%);
+    background-image: linear-gradient( #761e72, #40103E 70%);
     border: 1px solid #40103E;
 }
 
-.chart .green {
+.green {
     background: #18cd85;
-    background-image: linear-gradient( #18cd85, #14A76C,70%);
+    background-image: linear-gradient( #97e5c1, #14A76C 70%);
     border: 1px solid #14A76C;
 }
 
-.chart .red {
-    background: #d04643;
-    background-image: linear-gradient( #d04643, #BF3330 70%);
+.red {
+    background: #BF3330;
+    background-image: linear-gradient( #d65e5c, #BF3330 70%);
     border: 1px solid #BF3330;
 }
 
