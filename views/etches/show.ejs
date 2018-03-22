@@ -1,6 +1,6 @@
 
 
-<h1><%= etch.title %></h1>
+<h1 class="high-margin"><%= etch.title %></h1>
 <p><%= etch.body %></p>
 <h2>Sentiment:</h2>
     <p>Your etch has a <%= Math.abs((etch.result.sentiment.document.score * 100).toFixed(2))  %>% <%= (etch.result.sentiment.document.label) %> sentiment. </p>
@@ -30,7 +30,8 @@
 </div>
 
 
-<div class="btn-group btn-group-justified">
+<div class="btn-group btn-group-justified deep-margin">
+
 <a class= "btn etch-btn btn-dark" href="/etches/<%= etch._id %>/edit">Edit Etch</a>
 <form method="POST" action="/etches/<%= etch._id %>?_method=DELETE">
     <button class= "btn etch-btn btn-secondary" type="submit">Delete Etch</button>

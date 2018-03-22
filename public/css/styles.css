@@ -8,6 +8,18 @@ a {
     font-weight: 400;
 }
 
+.low-margin {
+    margin-bottom: 30px;
+}
+
+.deep-margin {
+    margin-bottom: 60px;
+}
+
+.high-margin {
+    margin-top: 30px;
+}
+
 .profile-box {
     border-radius: 25px;
     border: 2px solid grey;
@@ -50,6 +62,12 @@ div .anger:hover {
     background: linear-gradient(to right, white , #373F7F)
 }
 
+.mint {
+    background-color:rgba(55, 63, 127, 0.3);
+     /* rgb(20,167,108,0.8);
+     55,63,127 */
+}
+
 .etch-btn {
     margin: 5px;
 }
@@ -83,21 +101,9 @@ div .anger:hover {
     margin-left: 210px
 }
 
-.post-content-right {
-    /* margin-right: 210px; */
-}
 .post-title {
     font-weight: bold;
     font-size: 200%
-    /* margin: 0 200 0 200; */
-}
-
-h3.post-title {
-    /* margin-left: 250px; */
-}
-
-h3.post-title-right {
-    /* margin-left: 500px; */
 }
 
 .post-container p {
@@ -121,30 +127,17 @@ h3.post-title-right {
 }
 
 /* Footer */
-/* .fff .container {
-    margin-left: -15px;
-} */
+
 
 .container {
     min-height: 80vh;
 }
 
 .foot {
-    /* position: absolute; */
-    /* left: 0; */
-    /* bottom: 0; */
     width: 100%;
-    color: red;
+    color: #14A76C;
     text-align: center;
-    /* margin-bottom: -350px;; */
 }
-
-
-/* .foot p {
-    margin: 0;
-} */
-
-
 
 /* CSS FOR BAR CHART */
 
@@ -202,9 +195,6 @@ h3.post-title-right {
     border: 1px solid #BF3330;
 }
 
-.btn-group btn-group-justified {
-    float: right;
-}
 
 .new-etch-background{
     background-color: rgba(229, 183, 36, 0.27);

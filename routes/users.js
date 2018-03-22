@@ -1,62 +1,26 @@
 const 
     express = require('express'),
     userRoutes = new express.Router(),
-    passport = require('passport'),
-    Etch = require('../models/Etch.js'),
-    User = require('../models/User.js')
-    
+    userCntrl = require ('../controllers/users.js')    
  
 
-userRoutes.get('/login', (req, res) => {
-    res.render('users/login', { message: req.flash('loginMessage')})
-})
+userRoutes.get('/login', userCntrl.loginNew)
         
-userRoutes.post('/login', passport.authenticate('local-login', {
-    successRedirect: '/profile', 
-    failureRedirect: '/login'
-}))
+userRoutes.post('/login', userCntrl.loginCreate)
  
-userRoutes.get('/signup', (req, res) => {
-    res.render('users/signup',  { message: req.flash('signupMessage')}) 
-})
+userRoutes.get('/signup', userCntrl.signupNew)
         
-userRoutes.post('/signup', passport.authenticate('local-signup', {
-    successRedirect: '/profile',
-    failureRedirect: '/signup'
-}))
+userRoutes.post('/signup', userCntrl.signupCreate)
 
-userRoutes.get('/profile', isLoggedIn, (req, res) => {
-    Etch.find({user: req.user}, (err, allEtches) => {
-        res.render('users/profile', {user: req.user, message: req.flash('welcomeMessage'), etches: allEtches})
-    })    
-})
+userRoutes.get('/profile', isLoggedIn, userCntrl.show)
 
-userRoutes.get('/logout', (req, res) => {
-    req.logout()
-    res.redirect('/')
-})
+userRoutes.get('/logout', userCntrl.logout)
 
-userRoutes.get('/:userId/edit', isLoggedIn, (req, res) => {
-    User.findById(req.params.userId, (err, thatUser) => {
-        if(err) return console.log(err)
-        res.render('users/edit', {user: thatUser})
-    })
-})
+userRoutes.get('/:userId/edit', isLoggedIn, userCntrl.edit)
 
-userRoutes.patch('/:userId', isLoggedIn, (req, res) => {
-    User.findByIdAndUpdate(req.params.userId, req.body, {new: true}, (err, updatedUser) => {
-        if(err) return console.log(err)
-        res.redirect('/profile')
-    })
-})
+userRoutes.patch('/:userId', isLoggedIn, userCntrl.update)
 
-userRoutes.delete('/:userId', isLoggedIn, (req, res) => {
-    User.findByIdAndRemove(req.params.userId, (err, deletedUser) => {
-        Etch.remove({user: req.params.userId}, (err) => {
-            res.redirect('/')
-        })
-    })
-})
+userRoutes.delete('/:userId', isLoggedIn, userCntrl.destroy)
 
 function isLoggedIn(req, res, next){
     if(req.isAuthenticated()) return next()

@@ -1,4 +1,4 @@
-const 
+const
     Etch = require('../models/Etch.js'),
     NaturalLanguageUnderstandingV1 = require('watson-developer-cloud/natural-language-understanding/v1.js')
 
@@ -30,7 +30,11 @@ module.exports = {
     },
 
     create: (req, res) => {
-        console.log(req.body.body)
+        console.log(req.body.title)
+        if (!req.body.title){ 
+            req.flash('invalid-text', "A title is required...")
+            return res.redirect('/etches/new')
+        }
         const parameters = {
             'text': req.body.body,
             'features': {
@@ -45,7 +49,6 @@ module.exports = {
           }
           natural_language_understanding.analyze(parameters, function(err, response) {
             if (err) {
-
                 console.log('error:', err)
                 req.flash('invalid-text', "Text is invalid, cannot analyze. Please try again")
                 return res.redirect('/etches/new')
