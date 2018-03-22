@@ -26,7 +26,6 @@ This is an app that accurately analyzes the language in a message you want to se
 # Future work to be added: 
 1. Add a chart in users profile that aggregates what emotions are most prevelant across all previous etches 
 2. Add an email option to send messages directly from app.
-3. Add an option to send messagevto their social media or text message directly from app. 
 3. Add feature for user to add image to go on Profile page. 
 4. Display etch body as formatted rather than unformatted text on etch/show view. 
 
@@ -47,5 +46,7 @@ This is an app that accurately analyzes the language in a message you want to se
 ![alt text](/Users/misterhicks/Downloads/Screen Shot 2018-03-22 at 1.44.26 PM.png)
 
 ![alt text](/Users/misterhicks/Downloads/Screen Shot 2018-03-22 at 1.44.16 PM.png)
+
+
 
 
