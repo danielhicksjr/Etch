@@ -1,3 +1,13 @@
+h1, h2, h3, h4, h5 , h6 {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 800;
+}
+
+a {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 400;
+}
+
 .profile-box {
     border-radius: 25px;
     border: 2px solid grey;
@@ -10,8 +20,6 @@
 .profile-box:hover {
     font-size: 20px;
     font-style: oblique;
-    opacity: 1;
-    
 }
 
 .anger {
@@ -37,3 +45,189 @@ div .anger:hover {
 .sadness {
     background: linear-gradient(to right, white , #373F7F)
 }
+
+
+/* Splash Page */
+.post-container {
+    margin: 20px 20px 0 0;  
+    /* border: 3px solid #333; */
+    overflow: auto
+}
+
+.post-thumb {
+    float: left
+}
+
+.post-thumb-right {
+    float: right;
+}
+
+
+.post-thumb img {
+    display: block;
+    
+}
+
+.post-content {
+    margin-left: 210px
+}
+
+.post-content-right {
+    /* margin-right: 210px; */
+}
+.post-title {
+    font-weight: bold;
+    font-size: 200%
+    /* margin: 0 200 0 200; */
+}
+
+h3.post-title {
+    /* margin-left: 250px; */
+}
+
+h3.post-title-right {
+    /* margin-left: 500px; */
+}
+
+.post-container p {
+    font-family: 'EB Garamond', serif;
+}
+
+.img-circle {
+    border-radius: 50%;
+}
+
+.img-rounded{
+    border-radius: 25%;  
+}
+
+#space-below {
+    margin-bottom: 35px;
+}
+
+#space-above {
+    margin-top: 35px;
+}
+
+/* Footer */
+/* .fff .container {
+    margin-left: -15px;
+} */
+
+.container {
+    min-height: 80vh;
+}
+
+.foot {
+    /* position: absolute; */
+    /* left: 0; */
+    /* bottom: 0; */
+    width: 100%;
+    color: red;
+    text-align: center;
+    /* margin-bottom: -350px;; */
+}
+
+
+/* .foot p {
+    margin: 0;
+} */
+
+
+
+/* CSS FOR BAR CHART */
+
+.chart { 
+    width: 100%; 
+    background: url("http://cl.ly/QSpc/bg-chart.png") right top repeat-x;
+    height: 425px;
+    margin: 0 auto;
+}
+
+.chart li {
+    display: inline-block;
+    margin: 0 2% 0 0;
+    width: 16%;
+    border-radius: 4px 4px 0 0; 
+    box-shadow: 0 1px 0 0 rgba(255,255,255,.6) inset; 
+    padding: 5px 0;
+    position: relative;
+    text-align: center;
+    vertical-align: bottom;
+}
+
+
+.chart .percent {
+    font-size: 14px;
+    color: black;
+    width: 100%;
+    opacity: .9;
+    overflow: hidden;
+    text-transform: uppercase;
+    bottom: 20px;
+    margin: 60px 0 65px 0;
+    font-weight: 800;
+    opacity: .6;
+}
+
+.chart .percent span{
+    font-size: 12px;
+}
+
+.chart .axis { 
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    margin-top: 10px;
+    padding-right: 12%;
+    height: 10px;
+
+ }
+
+.chart .label { 
+    margin: 60px 0 65px 0;
+    display: inline;
+    font-weight: 800;
+    opacity: .9;
+    overflow: hidden;
+    text-transform: uppercase;
+    font-size: 14px;
+ }
+
+.chart .blue {
+    background: #5762b7;
+    background-image: linear-gradient( #5762b7, #373F7F 70%);
+    border: 1px solid #373F7F;
+}
+
+.chart .yellow {
+    background: #ebc752;
+    background-image: linear-gradient( #ebc752 #E5B724 70%);
+    border: 1px solid #E5B724;
+}
+
+.chart .purple {
+    background: #761e72;
+    background-image: linear-gradient( #761e72, #40103E, 70%);
+    border: 1px solid #40103E;
+}
+
+.chart .green {
+    background: #18cd85;
+    background-image: linear-gradient( #18cd85, #14A76C,70%);
+    border: 1px solid #14A76C;
+}
+
+.chart .red {
+    background: #d04643;
+    background-image: linear-gradient( #d04643, #BF3330 70%);
+    border: 1px solid #BF3330;
+}
+
+
+
+   
+
