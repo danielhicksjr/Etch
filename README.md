@@ -15,7 +15,7 @@ This is an app that accurately analyzes the language in a message you want to se
 6. As a user, I want my previous etches on my profile page to display a color based on the most dominant emotion.
 7. As a user, I want to see a bar graph showing the most prevalent emotions in my etch.
 
-#Approach Taken
+# Approach Taken
 
 1. We wanted to create a project that was unique.
 2. We wanted to create an app that would be of benefit to a user.  
@@ -33,13 +33,15 @@ This is an app that accurately analyzes the language in a message you want to se
 
 # Links
 
-###Trello
+### Trello
 <https://trello.com/b/WsvsAuMG>
 
-###Etch App
+### Etch App
 <https://git.heroku.com/fierce-cove-54764.git>
 
-###Wireframe 
+### Wireframe 
+
+
 ![alt text](/Users/misterhicks/Downloads/Screen Shot 2018-03-22 at 1.44.46 PM.png)
 
 ![alt text](/Users/misterhicks/Downloads/Screen Shot 2018-03-22 at 1.44.36 PM.png)
