@@ -16,6 +16,10 @@ a {
     margin-bottom: 60px;
 }
 
+.high-margin {
+    margin-top: 30px;
+}
+
 .profile-box {
     border-radius: 25px;
     border: 2px solid grey;
@@ -52,6 +56,12 @@ div .anger:hover {
 
 .sadness {
     background: linear-gradient(to right, white , #373F7F)
+}
+
+.mint {
+    background-color:rgba(55, 63, 127, 0.3);
+     /* rgb(20,167,108,0.8);
+     55,63,127 */
 }
 
 .etch-btn {

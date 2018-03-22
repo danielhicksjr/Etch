@@ -1,11 +1,11 @@
-<h1>Edit Etch</h1>
+<h1 class="high-margin">Edit</h1>
     <form method="post" action="/etches">
         <div class="form-group">
           <label for="etchTitle">Etch Title</label>
           <input type="text" name="title" class="form-control" id="etchTitle" value= "<%= etch.title %>">
         </div>
         <div class="form-group">
-          <label for="etchText">Etch body</label>
+          <label for="etchText">Etch Body</label>
           <textarea class="form-control" name="body" id="etchtext" rows="3"><%= etch.body %></textarea>
         </div>
         <button type="submit" class="btn btn-primary">Reanalyze</button>
