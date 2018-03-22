@@ -71,7 +71,9 @@ module.exports = {
 
     destroy: (req, res) => {
         Etch.findByIdAndRemove(req.params.etchId, (err, deletedEtch) => {
+            
             if (err) return console.log(err)
+            
             res.redirect('/profile')
         })
     }

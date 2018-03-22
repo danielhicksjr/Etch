@@ -1,5 +1,6 @@
 <div class="col-sm-6 col-sm-offset-3">
 
+
     <h1>Update Profile</h1>
         
 
@@ -21,7 +22,9 @@
     </form>
 
     <hr>
-
-   
+    <div class="btn-group btn-group-justified">
+    <form method="POST" action="/<%=user._id %>?_method=DELETE">
+    <button class= "btn profile-btn btn-secondary" type="submit">Delete Profile</button>
+   </div>
 
 </div>

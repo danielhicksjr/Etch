@@ -18,6 +18,7 @@ const
     etchRoutes = require('./routes/etches.js'),
     NaturalLanguageUnderstandingV1 = require('watson-developer-cloud/natural-language-understanding/v1.js')
     methodOverride = require('method-override')
+    
 
 const apiUsername = process.env.API_USERNAME
 const apiPassword = process.env.API_PASSWORD
