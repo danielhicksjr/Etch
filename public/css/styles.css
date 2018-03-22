@@ -198,7 +198,9 @@ h3.post-title-right {
     border: 1px solid #BF3330;
 }
 
-
+.btn-group btn-group-justified {
+    float: right;
+}
 
    
 
