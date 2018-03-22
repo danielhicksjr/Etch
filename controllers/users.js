@@ -36,7 +36,9 @@ module.exports = {
         })
     },
     update: (req, res) => {
-        User.findByIdAndUpdate(req.params.userId, req.body, {new: true}, (err, updatedUser) => {
+        if(!req.body.password) delete req.body.password
+        Object.assign(req.user, req.body)
+        req.user.save((err, updatedUser) => {
             if(err) return console.log(err)
             res.redirect('/profile')
         })

@@ -15,5 +15,13 @@ const
         return bcrypt.compareSync(password, this.password)
     }
 
+    userSchema.pre('save', function(next) {
+        if(this.isModified('password')) {
+            this.password = this.generateHash(this.password)
+        }
+
+        next()
+    })
+
     const User = mongoose.model('User', userSchema)
     module.exports = User
