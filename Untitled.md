@@ -23,12 +23,11 @@ This is an app that accurately analyzes the language in a message you want to se
 4. We wanted to ensure we collectively created an app that we were satisfied with and 
 
  
-# Unsolved Problems and Major Hurdles 
-
-1. 
-2.
-3.
-4.
+# Future work to be added: 
+1. Add a chart in users profile that aggregates what emotions are most prevelant across all previous etches 
+2. Add an email option to send messages directly from app.
+3. Add feature for user to add image to go on Profile page. 
+4. Display etch body as formatted rather than unformatted text on etch/show view. 
 
 
 # Links
@@ -39,7 +38,15 @@ This is an app that accurately analyzes the language in a message you want to se
 ###Etch App
 <https://git.heroku.com/fierce-cove-54764.git>
 
+###Wireframe 
+![alt text](/Users/misterhicks/Downloads/Screen Shot 2018-03-22 at 1.44.46 PM.png)
 
-![alt text] (https://files.slack.com/files-pri/T0351JZQ0-F9VFKB2NS/screen_shot_2018-03-22_at_1.44.46_pm.png)
+![alt text](/Users/misterhicks/Downloads/Screen Shot 2018-03-22 at 1.44.36 PM.png)
+
+![alt text](/Users/misterhicks/Downloads/Screen Shot 2018-03-22 at 1.44.26 PM.png)
+
+![alt text](/Users/misterhicks/Downloads/Screen Shot 2018-03-22 at 1.44.16 PM.png)
+
+
 
 
