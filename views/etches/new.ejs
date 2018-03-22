@@ -1,6 +1,10 @@
-<% if(message.length) {%>
-  <h4 id="invalid-text-flash"><%= message %></h4>
+<% if(textMessage.length) {%>
+  <h4 id="invalid-text-flash"><%= textMessage %></h4>
 <% }%>
+<% if (titleMessage.length) { %>
+<h4 id="title-required-flash"><%= titleMessage %></h4>
+<% } %>
+
 
 <form method="post" action="/etches">
   <div class="form-group">

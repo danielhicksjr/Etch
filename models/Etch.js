@@ -1,8 +1,8 @@
 const
     mongoose = require('mongoose'),
     etchSchema = new mongoose.Schema({
-        title: String,
-        body: String,
+        title: {type: String, required: true},
+        body: {type: String, required: true},
         result: Object,
         user: {type: mongoose.Schema.Types.ObjectId, ref: 'User'}
     }, {timestamps: true})
