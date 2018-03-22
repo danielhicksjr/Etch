@@ -2,14 +2,22 @@
   <h4 id="invalid-text-flash"><%= message %></h4>
 <% }%>
 
-<form method="post" action="/etches">
-  <div class="form-group">
-    <label for="etchTitle">Etch Title</label>
-    <input type="text" name="title" class="form-control" id="etchTitle" placeholder="Enter title here">
+<div class="new-etch-form">   
+  <div class="row">
+      <div class="col-md-6 offset-md-3 new-etch-background">
+        <h1>Create Etch</h1>
+          <form method="post" action="/etches">
+              <div class="form-group">
+                <label for="etchTitle">Etch Title</label>
+                <input type="text" name="title" class="form-control" id="etchTitle" placeholder="Enter title here">
+              </div>
+              <div class="form-group">
+                <label for="etchText">Etch Body</label>
+                <textarea class="form-control text-field-height" name="body" id="etchtext" rows="3" placeholder="Enter text here to be analyzed"></textarea>
+              </div>
+              <button type="submit" class="btn btn-primary">Analyze</button>
+          </form>
+      </div>
   </div>
-  <div class="form-group">
-    <label for="etchText">Etch body</label>
-    <textarea class="form-control" name="body" id="etchtext" rows="3" placeholder="Enter text here to be analyzed"></textarea>
-  </div>
-  <button type="submit" class="btn btn-primary">Analyze</button>
-</form>
+</div>
+

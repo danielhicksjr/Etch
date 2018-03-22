@@ -42,6 +42,10 @@ div .anger:hover {
     background: linear-gradient(to right, white , #14A76C)
 }
 
+.disgust.solid {
+    background: #14A76C;
+}
+
 .sadness {
     background: linear-gradient(to right, white , #373F7F)
 }
@@ -202,5 +206,31 @@ h3.post-title-right {
     float: right;
 }
 
+.new-etch-background{
+    background-color: rgba(229, 183, 36, 0.27);
+    margin-bottom: 30px;
+    padding-bottom: 20px;
+    border-radius: 10px;
+    color: black;
+    -webkit-box-shadow: 2px 0px 2px 4px rgba(0,0,0,0.4);
+    -moz-box-shadow: 2px 0px 2px 4px rgba(0,0,0,0.4);
+    box-shadow: 0px 4px 2px 2px rgba(0,0,0,0.3);
+}
+
+
+.text-field-height {
+    height: 250px;
+}
+
+.edit-etch-background {
+    background-color: rgba(229, 183, 36, 0.27);
+    margin-bottom: 30px;
+    padding-bottom: 20px;
+    border-radius: 10px;
+    color: black;
+    -webkit-box-shadow: 2px 0px 2px 4px rgba(0,0,0,0.4);
+    -moz-box-shadow: 2px 0px 2px 4px rgba(0,0,0,0.4);
+    box-shadow: 0px 4px 2px 2px rgba(0,0,0,0.3);
+}
    
 
