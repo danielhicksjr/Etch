@@ -1,14 +1,20 @@
-<div class="page-header">
-    <h1><%= user.name %></h1>   
-    <div class="btn-group btn-group-justified">
-        <a class= "btn profile-btn btn-dark" href="<%=user._id  %>/edit">Edit Profile</a>
-        </form>
-    </div> 
+<div class="row page-header align-items-center">
+    <div class="col-6">
+        <h1><%= user.name %></h1>   
+        <div class="btn-group btn-group-justified">
+            <a class= "btn profile-btn btn-dark" href="<%=user._id  %>/edit">Edit Profile</a>
+        </div> 
+    </div>
+    <div class="col-6 text-right"> 
+        <div id="newEtchBtn">
+        <h3><a href="/etches/new">Create New Etch</a></h3>
+        </div>
+    </div>
+    
 </div>
-<hr>
-<div id="newEtchBtn">
-    <h3><a href="/etches/new">Create New Etch</a></h3>
-</div>
+
+
+<hr id="space-below">
 <div id="etchList">
     <h4>My Etches</h4>
     <ul>
