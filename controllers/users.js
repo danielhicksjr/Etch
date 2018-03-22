@@ -32,16 +32,29 @@ module.exports = {
     edit: (req, res) => {
         User.findById(req.params.userId, (err, thatUser) => {
             if(err) return console.log(err)
-            res.render('users/edit', {user: thatUser})
+            res.render('users/edit', {user: thatUser, message: req.flash('profileMessage')})
         })
     },
     update: (req, res) => {
-        if(!req.body.password) delete req.body.password
-        Object.assign(req.user, req.body)
-        req.user.save((err, updatedUser) => {
+        if(req.body.password !== req.body.confirmPassword){
+            req.flash('profileMessage', "Passwords do not match.")
+            res.redirect(`/${req.user._id}/edit`)
+        } 
+        else if(!req.body.password || !req.body.confirmPassword) {
+            delete req.body.password
+            Object.assign(req.user, req.body)
+            req.user.save((err, updatedUser) => {
             if(err) return console.log(err)
             res.redirect('/profile')
-        })
+          })
+        }
+        else {  
+            Object.assign(req.user, req.body)
+            req.user.save((err, updatedUser) => {
+                if(err) return console.log(err)
+                res.redirect('/profile')
+            })
+        }
     },
     destroy: (req, res) => {
         User.findByIdAndRemove(req.params.userId, (err, deletedUser) => {

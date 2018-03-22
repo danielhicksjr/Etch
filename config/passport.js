@@ -26,6 +26,7 @@ const
             if(err) return done(err)
             if(user) return done(null, false, req.flash('signupMessage', "That email is taken."))
             if(!req.body.name || !req.body.email || !req.body.password) return done(null, false, req.flash('signupMessage', "All fields are required..."))
+            if(req.body.password !== req.body.confirmPassword) return done(null, false, req.flash('signupMessage', "Passwords do not match."))
             var newUser = new User()
             newUser.name = req.body.name
             newUser.email = req.body.email
@@ -47,7 +48,7 @@ passport.use('local-login', new LocalStrategy({
 	User.findOne({email: email}, (err, user) => {
 		if(err) return done(err)
 		if(!user) return done(null, false, req.flash('loginMessage', "No user found..."))
-		if(!user.validPassword(req.body.password)) return done(null, false, req.flash('loginMessage', "Invalid Credentials. Try Again."))
+        if(!user.validPassword(req.body.password)) return done(null, false, req.flash('loginMessage', "Invalid Credentials. Try Again."))
 		return done(null, user)
 	})
 }))
