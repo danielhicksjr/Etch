@@ -1,35 +1,36 @@
+
+
 <h1><%= etch.title %></h1>
 <p><%= etch.body %></p>
 <h2>Sentiment:</h2>
-    <p>Your etch has a <%= (etch.result.sentiment.document.score * 100).toFixed(2)  %>% <%= (etch.result.sentiment.document.label) %> sentiment. </p>
+    <p>Your etch has a <%= Math.abs((etch.result.sentiment.document.score * 100).toFixed(2))  %>% <%= (etch.result.sentiment.document.label) %> sentiment. </p>
 <h2>Emotions:</h2>
-<div class="container-fluid">
-    <div class="row align-items-end" style="height:400px">
-        <div class="blue bar col-sm-2 order-sm-1" style="height:<%= (etch.result.emotion.document.emotion.sadness * 100).toFixed()%>%"></div>
-        <div class="yellow bar col-sm-2 order-sm-2" style="height:<%= (etch.result.emotion.document.emotion.joy * 100).toFixed()%>%"></div>
-        <div class="purple bar col-sm-2 order-sm-3" style="height:<%= (etch.result.emotion.document.emotion.fear * 100).toFixed()%>%"></div>
-        <div class="green bar col-sm-2 order-sm-4" style="height:<%= (etch.result.emotion.document.emotion.disgust * 100).toFixed()%>%"></div>
-        <div class="red bar col-sm-2 order-sm-5" style="height:<%= (etch.result.emotion.document.emotion.anger * 100).toFixed()%>%"></div>
+<div class="graph-container">
+    <div class="row align-items-end" style="height:350px">
+        <div class="blue bar col-2 order-sm-1" style="height:<%= (etch.result.emotion.document.emotion.sadness * 100).toFixed(2)%>%"></div>
+        <div class="yellow bar col-2 order-sm-2" style="height:<%= (etch.result.emotion.document.emotion.joy * 100).toFixed(2)%>%"></div>
+        <div class="purple bar col-2 order-sm-3" style="height:<%= (etch.result.emotion.document.emotion.fear * 100).toFixed(2)%>%"></div>
+        <div class="green bar col-2 order-sm-4" style="height:<%= (etch.result.emotion.document.emotion.disgust * 100).toFixed(2)%>%"></div>
+        <div class="red bar col-2 order-sm-5" style="height:<%= (etch.result.emotion.document.emotion.anger * 100).toFixed(2)%>%"></div>
     </div>
     <div class="row label">
-        <div class="bar col-sm-2 order-1 order-sm-1">Sadness</div>
-        <div class="bar col-sm-2 order-2 order-sm-2">Joy</div>
-        <div class="bar col-sm-2 order-3 order-sm-3">Fear</div>
-        <div class="bar col-sm-2 order-4 order-sm-4">Disgust</div>
-        <div class="bar col-sm-2 order-5 order-sm-5">Anger</div>
+        <div class="bar col-2 order-1 order-sm-1">Sadness</div>
+        <div class="bar col-2 order-2 order-sm-2">Joy</div>
+        <div class="bar col-2 order-3 order-sm-3">Fear</div>
+        <div class="bar col-2 order-4 order-sm-4">Disgust</div>
+        <div class="bar col-2 order-5 order-sm-5">Anger</div>
     </div>
     <div class="row label">
-        <div class="bar col-sm-2 order-1 order-sm-1"> <%= (etch.result.emotion.document.emotion.sadness * 100).toFixed(2)  %><span>%</span></div>
-        <div class="bar col-sm-2 order-2 order-sm-2"> <%= (etch.result.emotion.document.emotion.joy * 100).toFixed(2)  %><span>%</span></div>
-        <div class="bar col-sm-2 order-3 order-sm-3"><%= (etch.result.emotion.document.emotion.fear * 100).toFixed(2)  %><span>%</span></div>
-        <div class="bar col-sm-2 order-4 order-sm-4"><%= (etch.result.emotion.document.emotion.disgust * 100).toFixed(2)  %><span>%</span></div>
-        <div class="bar col-sm-2 order-5 order-sm-5"><%= (etch.result.emotion.document.emotion.anger * 100).toFixed(2)   %><span>%</span></div>
+        <div class="bar percentage col-2 order-1 order-sm-1"> <%= (etch.result.emotion.document.emotion.sadness * 100).toFixed(2)  %><span>%</span></div>
+        <div class="bar percentage col-2 order-2 order-sm-2"> <%= (etch.result.emotion.document.emotion.joy * 100).toFixed(2)  %><span>%</span></div>
+        <div class="bar percentage col-2 order-3 order-sm-3"><%= (etch.result.emotion.document.emotion.fear * 100).toFixed(2)  %><span>%</span></div>
+        <div class="bar percentage col-2 order-4 order-sm-4"><%= (etch.result.emotion.document.emotion.disgust * 100).toFixed(2)  %><span>%</span></div>
+        <div class="bar percentage col-2 order-5 order-sm-5"><%= (etch.result.emotion.document.emotion.anger * 100).toFixed(2)   %><span>%</span></div>
     </div> 
 </div>
 
 
 <a class= "btn btn-primary" href="/etches/<%= etch._id %>/edit">Edit</a>
-
 
 <form method="POST" action="/etches/<%= etch._id %>?_method=DELETE">
     <button type="submit">Delete</button>

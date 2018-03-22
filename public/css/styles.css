@@ -137,17 +137,30 @@ h3.post-title-right {
 
 /* CSS FOR BAR CHART */
 
+.graph-container {
+    height: 450px;
+    min-width: 380px;
+    max-width: 650px;
+}
+
 .bar {
-    margin: 0 2% 0 0;
+    margin: 0 3% 0 0;
     border-radius: 4px 4px 0 0; 
     box-shadow: 0 1px 0 0 rgba(255,255,255,.6) inset; 
-    padding: 5px 0;
+    padding:  0;
     vertical-align: bottom;
 }
 
 .label {
     text-align: center; 
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
 }
+
+.percentage {
+    font-weight: 400;
+}
+
 .blue {
     background: #5762b7;
     background-image: linear-gradient( #5762b7, #373F7F 70%);
@@ -155,26 +168,26 @@ h3.post-title-right {
 }
 
 .yellow {
-    background: #ebc752;
-    background-image: linear-gradient( #ebc752 #E5B724 70%);
+    background: #fde79b;
+    background-image: linear-gradient( #fde79b, #E5B724 70%);
     border: 1px solid #E5B724;
 }
 
 .purple {
     background: #761e72;
-    background-image: linear-gradient( #761e72, #40103E, 70%);
+    background-image: linear-gradient( #761e72, #40103E 70%);
     border: 1px solid #40103E;
 }
 
 .green {
     background: #18cd85;
-    background-image: linear-gradient( #18cd85, #14A76C,70%);
+    background-image: linear-gradient( #97e5c1, #14A76C 70%);
     border: 1px solid #14A76C;
 }
 
 .red {
-    background: #d04643;
-    background-image: linear-gradient( #d04643, #BF3330 70%);
+    background: #BF3330;
+    background-image: linear-gradient( #d65e5c, #BF3330 70%);
     border: 1px solid #BF3330;
 }
 
