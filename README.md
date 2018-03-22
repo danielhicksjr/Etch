@@ -37,17 +37,17 @@ This is an app that accurately analyzes the language in a message you want to se
 <https://trello.com/b/WsvsAuMG>
 
 ### Etch App
-<https://git.heroku.com/fierce-cove-54764.git>
+<https://etches.herokuapp.com/>
 
 ### Wireframe 
 
 
-![alt text](/Users/misterhicks/Downloads/Screen Shot 2018-03-22 at 1.44.46 PM.png)
+![Imgur](https://i.imgur.com/1CxQsTX.png)
 
-![alt text](/Users/misterhicks/Downloads/Screen Shot 2018-03-22 at 1.44.36 PM.png)
+![Imgur](https://i.imgur.com/v0SbCUP.png)
 
-![alt text](/Users/misterhicks/Downloads/Screen Shot 2018-03-22 at 1.44.26 PM.png)
+![Imgur](https://i.imgur.com/hN7RvE2.png)
 
-![alt text](/Users/misterhicks/Downloads/Screen Shot 2018-03-22 at 1.44.16 PM.png)
+![Imgur](https://i.imgur.com/6gcpecb.png)
 
 
