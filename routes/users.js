@@ -4,6 +4,7 @@ const
     passport = require('passport'),
     Etch = require('../models/Etch.js'),
     User = require('../models/User.js')
+    
  
 
 userRoutes.get('/login', (req, res) => {
@@ -35,21 +36,21 @@ userRoutes.get('/logout', (req, res) => {
     res.redirect('/')
 })
 
-userRoutes.get('/:userId/edit', (req, res) => {
+userRoutes.get('/:userId/edit', isLoggedIn, (req, res) => {
     User.findById(req.params.userId, (err, thatUser) => {
         if(err) return console.log(err)
         res.render('users/edit', {user: thatUser})
     })
 })
 
-userRoutes.patch('/:userId', (req, res) => {
+userRoutes.patch('/:userId', isLoggedIn, (req, res) => {
     User.findByIdAndUpdate(req.params.userId, req.body, {new: true}, (err, updatedUser) => {
         if(err) return console.log(err)
         res.redirect('/profile')
     })
 })
 
-userRoutes.delete('/:userId', (req, res) => {
+userRoutes.delete('/:userId', isLoggedIn, (req, res) => {
     User.findByIdAndRemove(req.params.userId, (err, deletedUser) => {
         Etch.remove({user: req.params.userId}, (err) => {
             res.redirect('/')
