@@ -20,6 +20,10 @@ a {
     margin-top: 30px;
 }
 
+.larger-margin {
+    margin-top: 55px;
+}
+
 .profile-box {
     border-radius: 25px;
     border: 2px solid grey;
