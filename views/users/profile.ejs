@@ -22,7 +22,7 @@
         <% etches.forEach(function(e) { %>
             <% var path = e.result.emotion.document.emotion %>
             <% var t = Object.keys(path).reduce((a, b) => path[a] > path[b] ? a : b)%>  
-            <div class="profile-box <%= t %>">
+            <div class="profile-box <%= t %> fade">
                 <div>
                     <li class="hard-opacity"><a href="/etches/<%= e._id %>"><%= e.title %></a></li>
                 </div>
