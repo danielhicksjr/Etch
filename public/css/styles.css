@@ -34,32 +34,45 @@ a {
     font-style: oblique;
 }
 
-.anger {
+.anger.gradient {
     background: linear-gradient(to right, white , #BF3330)
     }
 
-div .anger:hover {
-    background: linear-gradient(to right, white , #BF3330)  
+.anger {
+    background: #BF3330;
 }
 
-.joy {
+
+.joy.gradient {
     background: linear-gradient(to right, white , #E5B724)
 }
 
-.fear {
+.joy{
+    background: #E5B724;
+}
+
+.fear.gradient {
     background: linear-gradient(to right, white , #40103E)
 }
 
-.disgust {
+.fear {
+    background: #40103E;
+}
+
+.disgust.gradient {
     background: linear-gradient(to right, white , #14A76C)
 }
 
-.disgust.solid {
+.disgust {
     background: #14A76C;
 }
 
-.sadness {
+.sadness.gradient {
     background: linear-gradient(to right, white , #373F7F)
+}
+
+.sadness {
+    background: #373F7F;
 }
 
 .mint {
