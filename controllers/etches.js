@@ -26,13 +26,13 @@ module.exports = {
     },
 
     new: (req, res) => {
-        res.render('etches/new', {user: req.user, textMessage: req.flash('invalid-text'), titleMessage: req.flash('title-required')})
+        res.render('etches/new', {user: req.user, message: req.flash('invalid-text')})
     },
 
     create: (req, res) => {
         console.log(req.body.title)
         if (!req.body.title){ 
-            req.flash('title-required', "A title is required...")
+            req.flash('invalid-text', "A title is required...")
             return res.redirect('/etches/new')
         }
         const parameters = {
@@ -48,7 +48,6 @@ module.exports = {
             'return_analyzed_text': true
           }
           natural_language_understanding.analyze(parameters, function(err, response) {
-
             if (err) {
                 console.log('error:', err)
                 req.flash('invalid-text', "Text is invalid, cannot analyze. Please try again")
