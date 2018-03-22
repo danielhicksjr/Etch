@@ -1,3 +1,13 @@
+h1, h2, h3, h4, h5 , h6 {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 800;
+}
+
+a {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 400;
+}
+
 .profile-box {
     border-radius: 25px;
     border: 2px solid grey;
@@ -35,6 +45,93 @@ div .anger:hover {
 .sadness {
     background: linear-gradient(to right, white , #373F7F)
 }
+
+
+/* Splash Page */
+.post-container {
+    margin: 20px 20px 0 0;  
+    /* border: 3px solid #333; */
+    overflow: auto
+}
+
+.post-thumb {
+    float: left
+}
+
+.post-thumb-right {
+    float: right;
+}
+
+
+.post-thumb img {
+    display: block;
+    
+}
+
+.post-content {
+    margin-left: 210px
+}
+
+.post-content-right {
+    /* margin-right: 210px; */
+}
+.post-title {
+    font-weight: bold;
+    font-size: 200%
+    /* margin: 0 200 0 200; */
+}
+
+h3.post-title {
+    /* margin-left: 250px; */
+}
+
+h3.post-title-right {
+    /* margin-left: 500px; */
+}
+
+.post-container p {
+    font-family: 'EB Garamond', serif;
+}
+
+.img-circle {
+    border-radius: 50%;
+}
+
+.img-rounded{
+    border-radius: 25%;  
+}
+
+#space-below {
+    margin-bottom: 35px;
+}
+
+#space-above {
+    margin-top: 35px;
+}
+
+/* Footer */
+/* .fff .container {
+    margin-left: -15px;
+} */
+
+.container {
+    min-height: 80vh;
+}
+
+.foot {
+    /* position: absolute; */
+    /* left: 0; */
+    /* bottom: 0; */
+    width: 100%;
+    color: red;
+    text-align: center;
+    /* margin-bottom: -350px;; */
+}
+
+
+/* .foot p {
+    margin: 0;
+} */
 
 
 
@@ -133,3 +230,4 @@ div .anger:hover {
 
 
    
+
